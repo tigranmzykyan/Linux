@@ -36,7 +36,7 @@
 Версия Ubuntu узнается с помощью команды \
 `cat /etc/issue `
 
-![Part1-1](images/Part1-1.png) *рис 1. Установлена версия Ubuntu 20.04 Server LTS*
+![Part1-1](src/images/Part1-1.png) *рис 1. Установлена версия Ubuntu 20.04 Server LTS*
 
 
 
@@ -50,11 +50,11 @@ ___
 
 `sudo useradd USER -g adm`
 
-![Part2-1](images/Part2-1.png)
+![Part2-1](src/images/Part2-1.png)
 *рис 2. Создание нового пользователя и добавления в группу adm*
 
 `cat /etc/passwd`
-![Part2-2](images/Part2-2.png)
+![Part2-2](src/images/Part2-2.png)
 *рис 3.Вывод команды*
 
 
@@ -67,7 +67,7 @@ ___
 
 `sudo hostname user-1`
 
-![Part3-1](images/Part3-1.png)
+![Part3-1](src/images/Part3-1.png)
 *рис 4. Задание название машины*
 
 
@@ -75,7 +75,7 @@ ___
 
 `sudo timedatectl set-timezone Europe/Moscow`
 
-![Part3-2](images/Part3-2.png)
+![Part3-2](src/images/Part3-2.png)
 *рис 5. Вывод текущей временой зоны*
 
 
@@ -83,7 +83,7 @@ ___
 
 `ls /sys/class/net`
 
-![Part3-3](images/Part3-3.png)
+![Part3-3](src/images/Part3-3.png)
 *рис 6. Название сетевых интерфейсов*
 
 
@@ -93,7 +93,7 @@ ___
 
 `ip a`
 
-![Part3-4](images/Part3-4.png)
+![Part3-4](src/images/Part3-4.png)
 *рис 7. Получения ip-адресса*
 
 >DHCP (англ. Dynamic Host Configuration Protocol — протокол динамической настройки узла) — сетевой протокол, позволяющий сетевым устройствам автоматически получать IP-адрес и другие параметры, необходимые для работы в сети TCP/IP.
@@ -102,22 +102,22 @@ ___
 
 `curl -s ipinfo.io/ip`
 
-![Part3-5](images/Part3-5.png)
+![Part3-5](src/images/Part3-5.png)
 *рис 8. Получения внешнего ip-адрес шлюза*
 
 `ip route | grep default | awk '{print $3}'`
 
-![Part3-6](images/Part3-6.png)
+![Part3-6](src/images/Part3-6.png)
 *рис 9. Получения внутреннего ip-адреса шлюза (gw)*
 
 
 ##### Задай статичные (заданные вручную, а не полученные от DHCP сервера) настройки ip, gw, dns (используй публичный DNS серверы, например 1.1.1.1 или 8.8.8.8).
-![Part3-7](images/Part3-7.png)
+![Part3-7](src/images/Part3-7.png)
 *рис 10. Cкриншот с выводом команды ls /etc/netplan и cat /etc/netplan/00-installer-config.yaml*
 
 ##### Перезагрузи виртуальную машину. Убедись, что статичные сетевые настройки (ip, gw, dns) соответствуют заданным в предыдущем пункте.
 
-![Part3-9](images/Part3-9.png)
+![Part3-9](src/images/Part3-9.png)
 *рис 11.Успешные выводы пингов*
 
 
@@ -129,7 +129,7 @@ ___
 
 ##### Обнови системные пакеты до последней на момент выполнения задания версии.
 
-![Part4-1](images/Part4-1.png)
+![Part4-1](src/images/Part4-1.png)
 *рис 12. Обновление системы*
 
 
@@ -145,12 +145,12 @@ ___
 
 `sudo usermod -aG sudo USER`
 
-![Part5-1](images/Part5-1.png)
+![Part5-1](src/images/Part5-1.png)
 *рис 12. Разрешение новому пользователю*
 
 `sudo hostnamectl set-hostname NewHostname`
 
-![Part5-2](images/Part5-2.png)
+![Part5-2](src/images/Part5-2.png)
 *рис 13. Задание нового имя хоста*
 
 ## Part 6. Установка и настройка службы времени
@@ -161,7 +161,7 @@ ___
 
 ##### Настрой службу автоматической синхронизации времени.
 
-![Part6-1](images/Part6-1.png)
+![Part6-1](src/images/Part6-1.png)
 *рис 14. Настройка службы синхронизации времени*
 
 ## Part 7. Установка и использование текстовых редакторов
@@ -174,14 +174,14 @@ ___
 **VIM**
 
 Чтобы выйти и сохраниться нужно `esc (на клавиатуре) :wq`
-![Part7-1](images/Part7-1.png)
+![Part7-1](src/images/Part7-1.png)
 *рис 15. Редактор Vim*
 
 **Nano**
 
 Чтобы выйти и сохраниться нужно `^X (control)` и потом нажать YES
 
-![Part7-2](images/Part7-2.png)
+![Part7-2](src/images/Part7-2.png)
 *рис 16. Редактор Nano* 
 
 
@@ -189,7 +189,7 @@ ___
 
 Чтобы выйти и сохраниться нужно `f2 + f10 (на клавиатуре)`
 
-![Part7-3](images/Part7-3.png)
+![Part7-3](src/images/Part7-3.png)
 *рис 16. Редактор McEdit*
 
 
@@ -200,21 +200,21 @@ ___
 
 Чтобы выйти без сохранения нужно `esc (на клавиатуре) :q!`
 
-![Part7-4](images/Part7-4.png)
+![Part7-4](src/images/Part7-4.png)
 *рис 17. Редактор Vim*
 
 **Nano**
 
 Чтобы выйти без сохранения нужно `^X (control)` и потом нажать NO
 
-![Part7-5](images/Part7-5.png)
+![Part7-5](src/images/Part7-5.png)
 *рис 18. Редактор Nano*
 
 **McEdit**
 
 Чтобы выйти без сохранения `f10 (на клавиатуре)`
 
-![Part7-6](images/Part7-6.png)
+![Part7-6](src/images/Part7-6.png)
 *рис 19. Редактор McEdit*
 
 
@@ -227,7 +227,7 @@ ___
 
 `esc (на клавиатуре) /word`
 
-![Part7-7](images/Part7-7.png)
+![Part7-7](src/images/Part7-7.png)
 *рис 21. Нахождение слова в редакторе VIM*
 
 
@@ -235,10 +235,10 @@ ___
 
 `esc (на клавиатуре) :%s/word/otherword/g`
 
-![Part7-8](images/Part7-8.png)
+![Part7-8](src/images/Part7-8.png)
 *рис 22. Замена слова в редакторе VIM*
 
-![Part7-9](images/Part7-9.png)
+![Part7-9](src/images/Part7-9.png)
 
 *рис 23. Результат*
 
@@ -247,20 +247,20 @@ ___
 
 Чтобы найти слово в редакторе Nano нужно `^W (control)`
 
-![Part7-10](images/Part7-10.png)
+![Part7-10](src/images/Part7-10.png)
 *рис 24. Нахождение слова в редакторе Nano*
 
 Чтобы найти слово в редакторе и заменить его Nano нужно `^\`
 
-![Part7-11](images/Part7-11.png)
+![Part7-11](src/images/Part7-11.png)
 
-![Part7-12](images/Part7-12.png)
+![Part7-12](src/images/Part7-12.png)
 
-![Part7-13](images/Part7-13.png)
+![Part7-13](src/images/Part7-13.png)
 
 *рис 25. Замена слова в редакторе Nano*
 
-![Part7-14](images/Part7-14.png)
+![Part7-14](src/images/Part7-14.png)
 
 *рис 26. Результат*
 
@@ -269,18 +269,18 @@ ___
 
 Чтобы найти слово в редакторе McEdit нужно `f7`
 
-![Part7-15](images/Part7-15.png)
+![Part7-15](src/images/Part7-15.png)
 *рис 27. Нахождение слова в редакторе McEdit*
 
 Чтобы найти слово в редакторе и заменить его McEdit нужно `f4`
 
-![Part7-16](images/Part7-16.png)
+![Part7-16](src/images/Part7-16.png)
 
-![Part7-17](images/Part7-17.png)
+![Part7-17](src/images/Part7-17.png)
 *рис 28. Замена слова в редакторе McEdit*
 
 
-![Part7-18](images/Part7-18.png)
+![Part7-18](src/images/Part7-18.png)
 *рис 29. Результат*
 
 ## Part 8. Установка и базовая настройка сервиса **SSHD**
@@ -293,19 +293,19 @@ ___
 `sudo apt-get install ssh`
 
 ##### Добавь автостарт службы при загрузке системы.
-![Part8-1](images/Part8-1.png)
+![Part8-1](src/images/Part8-1.png)
 *рис 30. Установка службы SShd*
 
 
 ##### Перенастрой службу SSHd на порт 2022.
 `sudo vim /etc/sshd_config`
 
-![Part8-2](images/Part8-2.png)
+![Part8-2](src/images/Part8-2.png)
 *рис 31. Добавления порта 2022*
 
 ##### Используя команду ps, покажи наличие процесса sshd. Для этого к команде нужно подобрать ключи.
 
-![Part8-3](images/Part8-3.png)
+![Part8-3](src/images/Part8-3.png)
 *рис 32.Наличие процесса sshd*
 
 >Системная утилита PS отвечает за отображение процессов на экране пользователя.
@@ -322,7 +322,7 @@ ___
 > * -t, (t) - выбрать процессы по tty;
 > * -u, (U) - выбрать процессы пользователя.
 
-![Part8-4](images/Part8-4.png)
+![Part8-4](src/images/Part8-4.png)
 *рис 33. После перезагрузки*
 
 
@@ -334,7 +334,7 @@ ___
 
 **Команда top**
 
-![Part9-1](images/Part9-1.png) *рис 34. Вывод команды top*
+![Part9-1](src/images/Part9-1.png) *рис 34. Вывод команды top*
 
 * uptime 43 min - время последней перезагрузки
 * количество авторизованных пользователей - 1 user
@@ -347,21 +347,21 @@ ___
 
 **Команда htop**
 
-![Part9-2](images/Part9-4.png) *рис 35. Вывод командны htop*
+![Part9-2](src/images/Part9-4.png) *рис 35. Вывод командны htop*
 
-![Part9-3](images/Part9-2.png) *рис 36. Вывод команды htop отсортированному по PID*
+![Part9-3](src/images/Part9-2.png) *рис 36. Вывод команды htop отсортированному по PID*
 
-![Part9-4](images/Part9-3.png) *рис 37. Вывод команды htop отсортированному по PERCENT_CPU*
+![Part9-4](src/images/Part9-3.png) *рис 37. Вывод команды htop отсортированному по PERCENT_CPU*
 
-![Part9-5](images/Part9-4.png) *рис 38. Вывод команды htop отсортированному по PERCENT_MEM*
+![Part9-5](src/images/Part9-4.png) *рис 38. Вывод команды htop отсортированному по PERCENT_MEM*
 
-![Part9-6](images/Part9-5.png) *рис 39. Вывод команды htop отсортированному по PERCENT_MEM*
+![Part9-6](src/images/Part9-5.png) *рис 39. Вывод команды htop отсортированному по PERCENT_MEM*
 
-![Part9-7](images/Part9-6.png) *рис 40. Вывод команды htop отфильтрованному для процесса sshd* 
+![Part9-7](src/images/Part9-6.png) *рис 40. Вывод команды htop отфильтрованному для процесса sshd* 
 
-![Part9-9](images/Part9-7.png) *рис 41. Найденный процесс syslog*
+![Part9-9](src/images/Part9-7.png) *рис 41. Найденный процесс syslog*
 
-![Part9-10](images/Part9-8.png) *рис 42. Добавление hostname, clock и uptime *
+![Part9-10](src/images/Part9-8.png) *рис 42. Добавление hostname, clock и uptime *
 
 
 ## Part 10. Использование утилиты **fdisk**
@@ -372,7 +372,7 @@ ___
 
 ##### Запусти команду fdisk -l.
 
-![Part10-1](images/Part10-1.png) *рис 43. Запуск программы fdisk*
+![Part10-1](src/images/Part10-1.png) *рис 43. Запуск программы fdisk*
 
 - Название: `UTMBOX`, размер: `10 GB`, количество секторов: `20971520 sectors`, размер swap: `1.3 GB`
 
@@ -386,7 +386,7 @@ ___
 
 ##### Запусти команду df.
 
-![Part11-1](images/Part11-1.png) *рис 44. Запук команды df*
+![Part11-1](src/images/Part11-1.png) *рис 44. Запук команды df*
 
  - размер раздела : `7865680 KiB`
  - размер занятого пространства : `4088944 KiB`
@@ -397,7 +397,7 @@ ___
 
 ##### Запусти команду df -Th.
 
-![Part11-2](images/Part11-2.png) *рис 45. Запуск программы df -Th*
+![Part11-2](src/images/Part11-2.png) *рис 45. Запуск программы df -Th*
 
 
  - размер раздела: `7.6G`
@@ -417,14 +417,14 @@ ___
 
 ##### Запусти команду du
 
-![Part12-1](images/Part12-1.png) *рис 46. Запуск программы du*
+![Part12-1](src/images/Part12-1.png) *рис 46. Запуск программы du*
 
 ##### Выведи размер папок /home, /var, /var/log (в байтах, в человекочитаемом виде)
-![Part12-2](images/Part12-4.png) *рис 47. Вывод размеров*
+![Part12-2](src/images/Part12-4.png) *рис 47. Вывод размеров*
 
 ##### Выведи размер всего содержимого в /var/log (не общее, а каждого вложенного элемента, используя *)
 
-![Part12-3](images/Part12-5.png) *рис 48.Вывод содержимого*
+![Part12-3](src/images/Part12-5.png) *рис 48.Вывод содержимого*
 
 
 ## Part 13. Установка и использование утилиты **ncdu**
@@ -435,11 +435,11 @@ ___
 
 ##### Выведи размер папок /home, /var, /var/log
 
-![Part13-1](images/Part13-1.png) *рис 48. Размер папки /home*
+![Part13-1](src/images/Part13-1.png) *рис 48. Размер папки /home*
 
-![Part13-2](images/Part13-2.png) *рис 49. Размер папки /var*
+![Part13-2](src/images/Part13-2.png) *рис 49. Размер папки /var*
 
-![Part13-3](images/Part13-3.png) *рис 50. Размер папки /var/log*
+![Part13-3](src/images/Part13-3.png) *рис 50. Размер папки /var/log*
 
 
 ## Part 14. Работа с системными журналами
@@ -453,13 +453,13 @@ ___
 ##### 2. /var/log/syslog
 ##### 3. /var/log/auth.log
 
-![Part14-1](images/Part14-1.png) *рис 51. Последняя успешная авторизация*
+![Part14-1](src/images/Part14-1.png) *рис 51. Последняя успешная авторизация*
 
 - Время последней успешной авторизации : `Feb 4 00:33:51`
 - Имя пользователя: `quirinuc` 
 - Метод входа в систему: `pam_unix`
 
-![Part14-2](images/Part14-2.png) *рис 52. Сообщение о рестарте службы*
+![Part14-2](src/images/Part14-2.png) *рис 52. Сообщение о рестарте службы*
 
 ## Part 15. Использование планировщика заданий **CRON**
 
@@ -472,15 +472,15 @@ ___
 
 `crontab -e`
 
-![Part15-1](images/Part15-2.png) *рис 53. Запуск команды планировщика*
+![Part15-1](src/images/Part15-2.png) *рис 53. Запуск команды планировщика*
 
 Ждем чуть больше 5-ти минут:
-![Part15-2](images/Part15-1.png) *рис 53. СMD*
+![Part15-2](src/images/Part15-1.png) *рис 53. СMD*
 
 Удалаем все задачи из планировщика:
 `crontab -l`
 
-![Part15-3](images/Part15-3.png) *рис 54. Удаление*
+![Part15-3](src/images/Part15-3.png) *рис 54. Удаление*
 
 
 
